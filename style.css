@@ -212,7 +212,7 @@ input, button {
     vertical-align: middle;
 }
 
-.share__link {
+.share-link {
     display: flex;
     text-decoration: none;
 }
