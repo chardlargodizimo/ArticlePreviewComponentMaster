@@ -1,0 +1,289 @@
+:root {
+    --clr-primary-100: hsl(210, 46%, 95%);
+    --clr-primary-200: hsl(212, 23%, 69%);
+    --clr-primary-300: hsl(214, 17%, 51%);
+    --clr-primary-400: hsl(217, 19%, 35%);
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+
+    --fs-400: 0.8125rem;
+    --fs-500: 1rem;
+
+    --fw-500: 500;
+    --fw-700: 700;
+
+    --ff-default: "Manrope", sans-serif;
+
+    --btn-size: 34px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button {
+  font: inherit;
+  line-height: 1.1;
+}
+
+/* utility */
+.wrapper {
+    width: calc(100% - 4rem);
+    margin-inline: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    outline: transparent;
+    overflow: hidden;
+}
+
+/* general styling */
+
+.default {
+    color: var(--clr-primary-300);
+    background-color: var(--clr-primary-100);
+    font-family: var(--ff-default);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-500);
+    place-items: center;
+}
+
+.card {
+    width: calc(100% - 3rem);
+    max-width: 475px;
+    background-color: var(--clr-neutral-100);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card__cover {
+    width: 100%;
+    aspect-ratio: 3 / 1.835;
+    object-fit: cover;
+    object-position: 0 -1rem;
+}
+
+.card__content {
+    padding-block: 1.25rem;
+}
+
+.card__title {
+    color: var(--clr-primary-400);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-500);
+    letter-spacing: 0.2px;
+}
+
+.card__text {
+    letter-spacing: 0.15px;
+}
+
+.card__content--footer {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    position: relative;
+    isolation: isolate;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.author__info {
+    margin-left: 1rem;
+}
+
+.avatar {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.author__name {
+    color: var(--clr-primary-400);
+    font-weight: var(--fw-700);
+    font-size: inherit;
+    margin: 0;
+}
+
+.date {
+    color: var(--clr-primary-200);
+}
+
+.button {
+    width: var(--btn-size);
+    cursor: pointer;
+    background-color: var(--clr-primary-100);
+    margin-left: auto;
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: 50%;
+}
+
+.button--share {
+    color: var(--clr-primary-300);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.button--share.inverse {
+    color: var(--clr-neutral-100); 
+    background-color: var(--clr-primary-300);
+}
+
+.share-option {
+    background-color: var(--clr-primary-400);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    inset: -1.25rem -2rem;
+    padding-inline: 2rem;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+}
+
+.share-option.active {
+    transform: translateY(0);
+}
+
+.share-option > span {
+    color: var(--clr-primary-200);
+    text-transform: uppercase;
+    letter-spacing: 5.4px;
+    vertical-align: middle;
+}
+
+.share__link {
+    display: flex;
+    text-decoration: none;
+}
+
+.fa-brands {
+    color: var(--clr-neutral-100);
+    font-size: 22px;
+}
+
+@media (min-width: 56.25em) {
+    :root {
+        --fs-500: 1.25rem;
+    }
+
+    .wrapper {
+        width: calc(100% - 5rem);
+    }
+
+    .card {
+        max-width: 730px;
+        display: grid;
+        grid-template-columns: 285px minmax(0, 1fr);
+        overflow: visible;
+    }
+
+    .card__content {
+        padding-block: 2rem;
+    }
+
+    .card__title {
+        margin: 0;
+    }
+
+    .card__text {
+        margin-top: 10px;
+    }
+
+    .card__cover {
+        height: 100%;
+        object-position: left;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .card__content--footer {
+        margin-top: 1.25rem;
+    }
+
+    .share-option {
+        padding-block: 1rem;
+        padding-inline: 2.25rem;
+        border-radius: 10px;
+        inset: initial;
+        top: 0;
+        left: calc(100% - var(--btn-size) / 2);
+        transform: translateY(0) translateX(-50%) scale(0);
+    }
+
+    .share-option::after {
+        --triangle-base: 24px;
+        content: '';
+        position: absolute;
+        bottom: calc(var(--triangle-base) / -2);
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: calc(var(--triangle-base) / 2) solid var(--clr-primary-400);
+        border-left: calc(var(--triangle-base) / 2)  solid transparent;
+        border-right: calc(var(--triangle-base) / 2)  solid transparent;
+    }
+
+    .share-option.active {
+        transform: translateY(-5.125rem) translateX(-50%) scale(1);
+    }
+}
