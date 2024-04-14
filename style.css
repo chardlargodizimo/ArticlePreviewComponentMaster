@@ -98,19 +98,6 @@ input, button {
     place-items: center;
 }
 
-.banner {
-    position: relative;
-}
-
-.banner::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background-color: hsl(0, 0%, 100%, 0.5);
-    mix-blend-mode: soft-light;
-}
-
 .card {
     position: relative;
     width: calc(100% - 3rem);
@@ -121,6 +108,19 @@ input, button {
 }
 
 .card__cover {
+    position: relative;
+}
+
+.card__cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: hsl(0, 0%, 100%, 0.5);
+    mix-blend-mode: s;
+}
+
+.card__cover--image {
     width: 100%;
     aspect-ratio: 3 / 1.835;
     object-fit: cover;
