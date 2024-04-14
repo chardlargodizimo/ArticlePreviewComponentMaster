@@ -98,7 +98,21 @@ input, button {
     place-items: center;
 }
 
+.banner {
+    position: relative;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: hsl(0, 0%, 100%, 0.5);
+    mix-blend-mode: soft-light;
+}
+
 .card {
+    position: relative;
     width: calc(100% - 3rem);
     max-width: 475px;
     background-color: var(--clr-neutral-100);
