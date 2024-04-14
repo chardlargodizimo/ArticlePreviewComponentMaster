@@ -69,10 +69,6 @@ input, button {
     margin-inline: auto;
 }
 
-.flex {
-    display: flex;
-}
-
 .grid {
     display: grid;
 }
