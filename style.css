@@ -117,7 +117,7 @@ input, button {
     inset: 0;
     z-index: 1;
     background-color: hsl(0, 0%, 100%, 0.5);
-    mix-blend-mode: s;
+    mix-blend-mode: soft-light;
 }
 
 .card__cover--image {
@@ -248,6 +248,13 @@ input, button {
         overflow: visible;
     }
 
+    .card__cover--image {
+        height: 100%;
+        object-position: left;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
     .card__content {
         padding-block: 2rem;
     }
@@ -258,13 +265,6 @@ input, button {
 
     .card__text {
         margin-top: 10px;
-    }
-
-    .card__cover {
-        height: 100%;
-        object-position: left;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
     }
 
     .card__content--footer {
